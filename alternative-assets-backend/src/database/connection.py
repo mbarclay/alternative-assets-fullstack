@@ -8,7 +8,7 @@ from config import settings
 
 class Database:
     @staticmethod
-    def get_session():
+    def get_session() -> Session:
         """
         create a database connection.
         """
