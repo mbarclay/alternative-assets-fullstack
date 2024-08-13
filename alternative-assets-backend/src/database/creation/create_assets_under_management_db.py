@@ -40,7 +40,7 @@ def populate_database():
     session.close()
 
 
-def column_to_unique_list(df: pd.DataFrame, column: str):
+def column_to_unique_list(df: pd.DataFrame, column: str) -> [str]:
     return df[column].unique().tolist()
 
 

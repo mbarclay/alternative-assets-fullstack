@@ -1,7 +1,7 @@
 import os
 
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import Session
 
 from config import settings
 
@@ -22,6 +22,5 @@ class Database:
         engine = create_engine(f"sqlite:///{db_path}")
 
         # create a session
-        Session = sessionmaker(bind=engine)
-        session = Session()
-        return session
+        with Session(bind=engine) as session:
+            return session
