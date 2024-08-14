@@ -6,7 +6,7 @@ import pycountry
 
 from config import settings
 from src.database.connection import Database
-from src.model.assets_under_management import AssetClass, Country, Investor, InvestoryType
+from src.model.assets_under_management import AssetClass, Commitment, Country, Investor, InvestoryType
 from src.utilities.epoch import date_string_to_epoch
 
 
@@ -44,6 +44,7 @@ def populate_database():
     insert_countries(df)
     insert_asset_classes(df)
     insert_investors(df)
+    insert_commitments(df)
 
 
 def column_to_unique_list(df: pd.DataFrame, column: str) -> [str]:
@@ -128,6 +129,25 @@ def insert_investors(df: pd.DataFrame):
         session.add(investor)
         session.commit()
 
+    session.close()
+
+
+def insert_commitments(df: pd.DataFrame):
+    session = Database.get_session()
+
+    # loop the dataframe
+    for index, row in df.iterrows():
+        investor_name = row["investor_name"]
+        investor_code = lookup_investor_code_by(investor_name)
+        asset_class_code = row["commitment_asset_class"].upper().replace(" ", "_")
+        currency_code = row["commitment_currency"]
+        amount = row["commitment_amount"]
+
+        commitment = Commitment(investor_code=investor_code, asset_class_code=asset_class_code, currency_code=currency_code, amount=amount)
+
+        session.add(commitment)
+
+    session.commit()  # larger number of objects, let's commit after the loop
     session.close()
 
 
