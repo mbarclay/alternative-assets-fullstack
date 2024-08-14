@@ -4,8 +4,7 @@ import sqlite3
 import pytest
 
 from config import settings
-from src.database.connection import Database
-from src.database.creation.create_assets_under_management_db import create_database
+from src.database.creation.create_assets_under_management_db import create_database, lookup_investor_code_by
 
 
 def test_create_database():
@@ -40,3 +39,11 @@ def test_create_database():
 
     # remove the db
     os.remove(db_path)
+
+
+def test_lookup_existing_investor():
+    assert lookup_investor_code_by("Ioo Gryffindor fund") == "IGF"
+
+
+def test_lookup_non_existing_investor():
+    assert lookup_investor_code_by("Unknown fund") == "---"

@@ -3,8 +3,6 @@ import uuid
 from sqlalchemy import Column, ForeignKey, Index, Integer, Text
 from sqlalchemy.orm import declarative_base, relationship
 
-from src.database.connection import Database
-
 # import path for declarative_base
 Base = declarative_base()
 
