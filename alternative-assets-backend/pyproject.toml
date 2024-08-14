@@ -11,6 +11,8 @@ sqlalchemy = "^2.0.32"
 dynaconf = "^3.2.6"
 pandas = "^2.2.2"
 pycountry = "^24.6.1"
+uvicorn = "^0.30.6"
+fastapi = "^0.112.0"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.5.7"
