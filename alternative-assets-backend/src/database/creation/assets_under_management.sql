@@ -28,8 +28,8 @@ create table investors
         constraint investors_pk
             primary key,
     name                TEXT    not null,
-    created_epoc        integer not null,
-    last_updated_epoc   integer not null,
+    created_epoch        integer not null,
+    last_updated_epoch   integer not null,
     country_iso         integer not null
         constraint investors_countries_iso_fk
             references countries,

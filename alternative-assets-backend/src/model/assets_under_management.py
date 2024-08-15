@@ -37,8 +37,8 @@ class Investor(Base):
 
     investor_code = Column(Text, primary_key=True, nullable=False)
     name = Column(Text, nullable=False)
-    created_epoc = Column(Integer, nullable=False)
-    last_updated_epoc = Column(Integer, nullable=False)
+    created_epoch = Column(Integer, nullable=False)
+    last_updated_epoch = Column(Integer, nullable=False)
     country_iso = Column(Text(3), ForeignKey("countries.iso"), nullable=False)
     investory_type_code = Column(Text, ForeignKey("investory_types.investory_type_code"), nullable=False)
 

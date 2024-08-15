@@ -120,8 +120,8 @@ def insert_investors(df: pd.DataFrame):
         investor = Investor(
             investor_code=investor_code,
             name=investor_name,
-            created_epoc=created_epoch,
-            last_updated_epoc=last_updated_epoch,
+            created_epoch=created_epoch,
+            last_updated_epoch=last_updated_epoch,
             country_iso=country_iso,
             investory_type_code=investory_type_code,
         )
