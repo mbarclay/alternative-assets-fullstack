@@ -108,9 +108,9 @@ def insert_investors(df: pd.DataFrame):
         investor_code = lookup_investor_code_by(investor_name)
 
         # other investor values
-        created_string = df[df["investor_name"] == investor_name]["investor_date_added"].iloc[0]
+        added_string = df[df["investor_name"] == investor_name]["investor_date_added"].iloc[0]
         last_updated_string = df[df["investor_name"] == investor_name]["investor_last_updated"].iloc[0]
-        created_epoch = date_string_to_epoch(created_string)
+        added_epoch = date_string_to_epoch(added_string)
         last_updated_epoch = date_string_to_epoch(last_updated_string)
 
         country = df[df["investor_name"] == investor_name]["investor_country"].iloc[0]
@@ -120,7 +120,7 @@ def insert_investors(df: pd.DataFrame):
         investor = Investor(
             investor_code=investor_code,
             name=investor_name,
-            created_epoch=created_epoch,
+            added_epoch=added_epoch,
             last_updated_epoch=last_updated_epoch,
             country_iso=country_iso,
             investory_type_code=investory_type_code,
