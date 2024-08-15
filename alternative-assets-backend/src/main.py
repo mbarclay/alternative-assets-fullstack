@@ -51,7 +51,8 @@ async def home(request: Request):
             country_name=investor.country.name if investor.country else None,
             investory_type_code=investor.investory_type_code,
             investory_type=investor.investory_type.investory_type if investor.investory_type else None,
-            total_commitment=total_commitment if total_commitment else 0
+            total_commitment=total_commitment if total_commitment else 0,
+            created_epoc=investor.created_epoc,
         )
         for investor, total_commitment in investors
     ]

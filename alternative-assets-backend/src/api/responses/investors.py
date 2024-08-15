@@ -11,6 +11,7 @@ class InvestorResponse(BaseModel):
     investory_type_code: str
     investory_type: str
     total_commitment: int
+    created_epoc: int
 
     model_config = {
         "from_attributes": True
