@@ -27,7 +27,7 @@ async def assets_summary(investor_code: str) -> List[AssetsByInvestorSummaryResp
 
 
 @app.get(
-    "/investor-commitments/{investor_code}/asset/{asset_class_code}", response_model=List[InvestorCommitmentsResponse]
+    "/investor/{investor_code}/commitments/asset-class/{asset_class_code}", response_model=List[InvestorCommitmentsResponse]
 )
 async def investor_commitments(investor_code: str, asset_class_code: str) -> List[InvestorCommitmentsResponse]:
     investor_commitments_response = await get_investor_commitments(investor_code, asset_class_code)
