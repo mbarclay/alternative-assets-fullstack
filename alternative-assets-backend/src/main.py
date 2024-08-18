@@ -36,4 +36,4 @@ async def investor_commitments(investor_code: str, asset_class_code: str) -> Lis
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8081)
+    uvicorn.run(app, host="0.0.0.0", port=8080)
