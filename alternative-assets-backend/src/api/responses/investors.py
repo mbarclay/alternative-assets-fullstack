@@ -13,6 +13,4 @@ class InvestorResponse(BaseModel):
     total_commitment: int
     added_epoch: int
 
-    model_config = {
-        "from_attributes": True
-    }
+    model_config = {"from_attributes": True}
