@@ -100,7 +100,9 @@ def insert_investors(df: pd.DataFrame):
         investory_type_name = df[df["investor_name"] == investor_name]["investory_type"].iloc[0]
 
         # look up the investory type code
-        investory_type_code = session.query(InvestoryType).filter_by(investory_type=investory_type_name).first().investory_type_code
+        investory_type_code = (
+            session.query(InvestoryType).filter_by(investory_type=investory_type_name).first().investory_type_code
+        )
         if investory_type_code is None:
             raise LookupError("Investor type not found")
 
@@ -143,7 +145,9 @@ def insert_commitments(df: pd.DataFrame):
         currency_code = row["commitment_currency"]
         amount = row["commitment_amount"]
 
-        commitment = Commitment(investor_code=investor_code, asset_class_code=asset_class_code, currency_code=currency_code, amount=amount)
+        commitment = Commitment(
+            investor_code=investor_code, asset_class_code=asset_class_code, currency_code=currency_code, amount=amount
+        )
 
         session.add(commitment)
 
