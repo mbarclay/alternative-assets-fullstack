@@ -42,7 +42,7 @@ class Investor(Base):
     country_iso = Column(Text(3), ForeignKey("countries.iso"), nullable=False)
     investory_type_code = Column(Text, ForeignKey("investory_types.investory_type_code"), nullable=False)
 
-    # Relationships
+    # relationships
     country = relationship("Country", back_populates="investors")
     investory_type = relationship("InvestoryType", back_populates="investors")
     commitments = relationship("Commitment", back_populates="investor")
@@ -62,7 +62,7 @@ class Commitment(Base):
     currency_code = Column(Text, nullable=False)
     amount = Column(Integer, nullable=False)
 
-    # Relationships
+    # relationships
     investor = relationship("Investor", back_populates="commitments")
     asset_class = relationship("AssetClass")
 
