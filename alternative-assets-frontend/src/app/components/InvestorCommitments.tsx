@@ -3,7 +3,7 @@
 import styles from '@/app/page.module.css';
 import { useState, useEffect } from 'react';
 import { InvestorCommitment } from '@/app/model/InvestorCommitment';
-import { formatCurrency } from "@/app/utilities/Currency";
+import { formatCurrency } from "@/app/utilities/Formatters";
 
 interface InvestorCommitmentsTableProps {
   investorCode: string | undefined;

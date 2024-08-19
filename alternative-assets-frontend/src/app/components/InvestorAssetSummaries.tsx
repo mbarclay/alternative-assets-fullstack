@@ -3,7 +3,7 @@
 import styles from '@/app/page.module.css';
 import { useState, useEffect } from 'react';
 import { AssetSummary } from '@/app/model/AssetSummary';
-import {formatCurrency} from "@/app/utilities/Currency";
+import {formatCurrency} from "@/app/utilities/Formatters";
 
 interface AssetSummariesProps {
     onAssetSummarySelect: (assetSummary: AssetSummary) => void;

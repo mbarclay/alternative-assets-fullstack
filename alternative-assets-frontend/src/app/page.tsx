@@ -37,7 +37,7 @@ export default function Home() {
                 </h2>
             </div>
             )}
-            
+
             { selectedInvestor && (
                 <div>
                     <AssetSummaryGrid investorCode={selectedInvestor?.investor_code}
@@ -45,7 +45,7 @@ export default function Home() {
                 </div>
             )}
 
-            {selectedAssetSummary && (
+            {selectedAssetSummary && selectedInvestor && (
                 <div>
                     <InvestorCommitments investorCode={selectedInvestor?.investor_code}
                                          assetClassCode={selectedAssetSummary?.asset_class_code}/>

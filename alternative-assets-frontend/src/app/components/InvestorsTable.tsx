@@ -3,7 +3,7 @@
 import styles from '@/app/page.module.css';
 import { useState, useEffect } from 'react';
 import { Investor } from '@/app/model/Investor';
-import {formatCurrency} from "@/app/utilities/Currency";
+import {formatCurrency, formatDate} from "@/app/utilities/Formatters";
 
 interface InvestorsTableProps {
   onInvestorSelect: (investor: Investor) => void;
@@ -19,15 +19,6 @@ const InvestorsTable = ({ onInvestorSelect }: InvestorsTableProps) => {
       .then((data) => setInvestors(data))
       .catch((error) => console.error('Error fetching investors:', error));
   }, []);
-
-  const formatDate = (epoch: number): string => {
-    const date = new Date(epoch * 1000);
-    return date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    });
-  };
 
   const handleRowClick = (investor: Investor) => {
     setSelectedInvestor(investor);
