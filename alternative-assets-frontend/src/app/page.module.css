@@ -1,9 +1,9 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
+  justify-content: flex-start;
+  align-items: normal;
+  padding: 2rem;
   min-height: 100vh;
 }
 
@@ -15,7 +15,7 @@
   max-width: var(--max-width);
   width: 100%;
   z-index: 2;
-  font-family: var(--font-mono);
+  font-family: var(--font-mono), serif;
 }
 
 .description a {
@@ -29,8 +29,8 @@
   position: relative;
   margin: 0;
   padding: 1rem;
-  background-color: rgba(var(--callout-rgb), 0.5);
-  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
+  background-color: rgba(255, 255, 255, 0.9); /* Changed to light color */
+  border: 1px solid rgba(200, 200, 200, 0.3); /* Changed to light border */
   border-radius: var(--border-radius);
 }
 
@@ -49,8 +49,8 @@
 .card {
   padding: 1rem 1.2rem;
   border-radius: var(--border-radius);
-  background: rgba(var(--card-rgb), 0);
-  border: 1px solid rgba(var(--card-border-rgb), 0);
+  background: rgba(255, 255, 255, 1); /* Changed to light background */
+  border: 1px solid rgba(200, 200, 200, 0.5); /* Changed to light border */
   transition: background 200ms, border 200ms;
 }
 
@@ -66,7 +66,7 @@
 
 .card p {
   margin: 0;
-  opacity: 0.6;
+  opacity: 0.8; /* Adjusted for visibility in light mode */
   font-size: 0.9rem;
   line-height: 1.5;
   max-width: 30ch;
@@ -82,7 +82,7 @@
 }
 
 .center::before {
-  background: var(--secondary-glow);
+  background: #e0e0e0; /* Changed to light background */
   border-radius: 50%;
   width: 480px;
   height: 360px;
@@ -90,7 +90,7 @@
 }
 
 .center::after {
-  background: var(--primary-glow);
+  background: #f0f0f0; /* Changed to light background */
   width: 240px;
   height: 180px;
   z-index: -1;
@@ -109,60 +109,11 @@
   position: relative;
 }
 
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.title {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  font-family: var(--font-mono);
-}
-
-.tableContainer {
-  width: 100%;
-  max-width: var(--max-width);
-  padding: 0 1rem;
-}
-
-.customTable {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-  background-color: rgba(var(--tile-start-rgb), 0.9);
-  border-radius: var(--border-radius);
-  overflow: hidden;
-}
-
-.customTable th, .customTable td {
-  padding: 12px 15px;
-  text-align: left;
-  border-bottom: 1px solid rgba(var(--tile-end-rgb), 0.7);
-}
-
-.customTable th {
-  background-color: rgba(var(--tile-start-rgb), 1);
-  font-weight: 600;
-  font-family: var(--font-mono), serif;
-}
-
-.customTable td {
-  font-size: 0.9rem;
-}
-
-.customTable tbody tr:hover {
-  background-color: rgba(var(--card-rgb), 0.1);
-}
-
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
-    background: rgba(var(--card-rgb), 0.1);
-    border: 1px solid rgba(var(--card-border-rgb), 0.15);
+    background: rgba(240, 240, 240, 0.9); /* Changed to light hover background */
+    border: 1px solid rgba(200, 200, 200, 0.6); /* Changed to light hover border */
   }
 
   .card:hover span {
@@ -228,11 +179,11 @@
     padding: 2rem 1rem 1.4rem;
     border-radius: 0;
     border: none;
-    border-bottom: 1px solid rgba(var(--callout-border-rgb), 0.25);
+    border-bottom: 1px solid rgba(200, 200, 200, 0.25);
     background: linear-gradient(
       to bottom,
-      rgba(var(--background-start-rgb), 1),
-      rgba(var(--callout-rgb), 0.5)
+      rgba(255, 255, 255, 1),
+      rgba(240, 240, 240, 0.5)
     );
     background-clip: padding-box;
     backdrop-filter: blur(24px);
@@ -247,7 +198,7 @@
     background: linear-gradient(
       to bottom,
       transparent 0%,
-      rgb(var(--background-end-rgb)) 40%
+      rgb(240, 240, 240) 40%
     );
     z-index: 1;
   }
@@ -260,16 +211,6 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .vercelLogo {
-    filter: invert(1);
-  }
-
-  .logo {
-    filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
-  }
-}
-
 @keyframes rotate {
   from {
     transform: rotate(360deg);
@@ -277,4 +218,36 @@
   to {
     transform: rotate(0deg);
   }
+}
+
+/*---*/
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 1rem;
+}
+
+.table th,
+.table td {
+  padding: 0.5rem 0.5rem; /* Increase top and bottom padding */
+  text-align: left;
+  border-bottom: 1px solid rgba(179, 179, 179, 0.3);
+}
+
+.table th {
+  background-color: #333; /* Dark grey background color */
+  color: #fff; /* White text color */
+  font-weight: 700;
+  padding: 0.5rem 0.5rem;
+  text-align: left;
+}
+
+.table tr:hover {
+  background-color: rgba(240, 240, 240, 0.9);
+}
+
+.table tr:last-child td {
+  border-bottom: none;
 }
