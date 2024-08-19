@@ -3,6 +3,7 @@
 import styles from '@/app/page.module.css';
 import { useState, useEffect } from 'react';
 import { AssetSummary } from '@/app/model/AssetSummary';
+import {formatCurrency} from "@/app/utilities/Currency";
 
 interface AssetSummariesProps {
     onAssetSummarySelect: (name: string) => void;
@@ -22,14 +23,17 @@ const AssetSummaryGrid = ({ onAssetSummarySelect, investorCode }: AssetSummaries
     }, [investorCode]);
 
     return (
-        <div>
-            <ul>
-                {assetSummaries.map((assetSummary) => (
-                    <li key={assetSummary.asset_class_code} onClick={() => onAssetSummarySelect(assetSummary.asset_class)}>
-                        {assetSummary.asset_class} ({assetSummary.total_commitment_amount})
-                    </li>
-                ))}
-            </ul>
+        <div className={styles.gridContainer}>
+            {assetSummaries.map((assetSummary) => (
+                <div
+                    key={assetSummary.asset_class_code}
+                    className={styles.card}
+                    onClick={() => onAssetSummarySelect(assetSummary.asset_class)}
+                >
+                    <h4>{assetSummary.asset_class}</h4>
+                    <p>{formatCurrency(assetSummary.total_commitment_amount)}</p>
+                </div>
+            ))}
         </div>
     );
 };

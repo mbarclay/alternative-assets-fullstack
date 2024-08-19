@@ -3,6 +3,7 @@
 import styles from '@/app/page.module.css';
 import { useState, useEffect } from 'react';
 import { Investor } from '@/app/model/Investor';
+import {formatCurrency} from "@/app/utilities/Currency";
 
 interface InvestorsTableProps {
   onInvestorSelect: (investor: Investor) => void;
@@ -18,14 +19,6 @@ const InvestorsTable = ({ onInvestorSelect }: InvestorsTableProps) => {
       .then((data) => setInvestors(data))
       .catch((error) => console.error('Error fetching investors:', error));
   }, []);
-
-  const formatCurrency = (value: number): string => {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-      notation: 'compact',
-    }).format(value);
-  };
 
   const formatDate = (epoch: number): string => {
     const date = new Date(epoch * 1000);

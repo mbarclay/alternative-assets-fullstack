@@ -46,14 +46,6 @@
   width: var(--max-width);
 }
 
-.card {
-  padding: 1rem 1.2rem;
-  border-radius: var(--border-radius);
-  background: rgba(255, 255, 255, 1); /* Changed to light background */
-  border: 1px solid rgba(200, 200, 200, 0.5); /* Changed to light border */
-  transition: background 200ms, border 200ms;
-}
-
 .card span {
   display: inline-block;
   transition: transform 200ms;
@@ -254,4 +246,44 @@
 
 .selectedRow {
   background-color: #f0f0f0;
+}
+
+/*---*/
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.card {
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  /*background: #f0f0f0; !* Match the selectedRow background color *!*/
+  border: 1px solid rgba(200, 200, 200, 0.5); /* Light border */
+  text-align: center; /* Center text in the card */
+  cursor: pointer;
+  transition: background 200ms, border 200ms;
+}
+
+.card:hover {
+  background: rgba(240, 240, 240, 0.9); /* Light hover background similar to the table row hover */
+  border: 1px solid rgba(200, 200, 200, 0.6); /* Light hover border */
+}
+
+/* Selected state styling */
+.card.selected {
+  background-color: #f0f0f0; /* Same as .selectedRow background color */
+  border: 1px solid rgba(179, 179, 179, 0.5); /* Slightly darker border for emphasis */
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  margin: 0;
+  font-size: 1rem;
 }

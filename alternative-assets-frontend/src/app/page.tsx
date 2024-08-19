@@ -12,6 +12,7 @@ export default function Home() {
 
   const handleInvestorSelect = (investor: Investor) => {
     setSelectedInvestor(investor);
+    setSelectedAssetCode(null)
   };
 
   const handleAssetSummarySelect = (assetCode: string) => {
@@ -28,7 +29,7 @@ export default function Home() {
       </div>
       <div className={styles.div}>
         <h2 className={styles.h2}>
-          {selectedInvestor?.name ? selectedInvestor.name : ''} {selectedAssetCode}
+          Commitments: {selectedInvestor?.name ? selectedInvestor.name : ''}
         </h2>
       </div>
         <div>
