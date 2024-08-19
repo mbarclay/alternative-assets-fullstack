@@ -5,16 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b0938af-6c40-4f0b-9a3e-9c3ff48a8eff" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/components/InvestorAssetSummaries.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/model/AssetSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/model/InvestorCommitment.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/InvestorsTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/InvestorsTable.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/types/Investor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/model/Investor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rapid-api/alternative_assets_api.paw" beforeDir="false" afterPath="$PROJECT_DIR$/../rapid-api/alternative_assets_api.paw" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -47,6 +59,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/app" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/model" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="dev" type="js.build_tools.npm">
@@ -76,7 +91,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1724071385465</updated>
-      <workItem from="1724071386531" duration="3357000" />
+      <workItem from="1724071386531" duration="8909000" />
     </task>
     <servers />
   </component>

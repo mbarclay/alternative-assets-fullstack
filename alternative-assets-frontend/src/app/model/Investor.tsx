@@ -1,4 +1,3 @@
-// src/app/types/Investor.ts
 export interface Investor {
   investor_code: string;
   name: string;

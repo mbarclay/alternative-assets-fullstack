@@ -251,3 +251,7 @@
 .table tr:last-child td {
   border-bottom: none;
 }
+
+.selectedRow {
+  background-color: #f0f0f0;
+}
