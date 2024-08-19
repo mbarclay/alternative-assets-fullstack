@@ -6,7 +6,7 @@ import { AssetSummary } from '@/app/model/AssetSummary';
 import {formatCurrency} from "@/app/utilities/Currency";
 
 interface AssetSummariesProps {
-    onAssetSummarySelect: (name: string) => void;
+    onAssetSummarySelect: (assetSummary: AssetSummary) => void;
     investorCode: string | undefined;
 }
 
@@ -28,7 +28,7 @@ const AssetSummaryGrid = ({ onAssetSummarySelect, investorCode }: AssetSummaries
                 <div
                     key={assetSummary.asset_class_code}
                     className={styles.card}
-                    onClick={() => onAssetSummarySelect(assetSummary.asset_class)}
+                    onClick={() => onAssetSummarySelect(assetSummary)}
                 >
                     <h4>{assetSummary.asset_class}</h4>
                     <p>{formatCurrency(assetSummary.total_commitment_amount)}</p>

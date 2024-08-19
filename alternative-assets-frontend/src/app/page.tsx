@@ -6,18 +6,19 @@ import InvestorsTable from '@/app/components/InvestorsTable';
 import AssetSummaryGrid from "@/app/components/InvestorAssetSummaries";
 import {Investor} from "@/app/model/Investor";
 import InvestorCommitments from "@/app/components/InvestorCommitments";
+import {AssetSummary} from "@/app/model/AssetSummary";
 
 export default function Home() {
     const [selectedInvestor, setSelectedInvestor] = useState<Investor | undefined>(undefined);
-    const [selectedAssetCode, setSelectedAssetCode] = useState<string | undefined>(undefined);
+    const [selectedAssetSummary, setSelectedAssetSummary] = useState<AssetSummary | undefined>(undefined);
 
     const handleInvestorSelect = (investor: Investor) => {
         setSelectedInvestor(investor);
-        setSelectedAssetCode(undefined)
+        setSelectedAssetSummary(undefined)
     };
 
-    const handleAssetSummarySelect = (assetCode: string) => {
-        setSelectedAssetCode(assetCode)
+    const handleAssetSummarySelect = (assetSummary: AssetSummary) => {
+        setSelectedAssetSummary(assetSummary)
     }
 
     return (
@@ -28,18 +29,28 @@ export default function Home() {
             <div className={styles.div}>
                 <InvestorsTable onInvestorSelect={handleInvestorSelect}/>
             </div>
+
+            { selectedInvestor && (
             <div className={styles.div}>
                 <h2 className={styles.h2}>
-                    Commitments: {selectedInvestor?.name ? selectedInvestor.name : '(choose investor)'}: {selectedAssetCode}
+                    Commitments: {selectedInvestor?.name ? selectedInvestor.name : ''}: {selectedAssetSummary?.asset_class}
                 </h2>
             </div>
-            <div>
-                <AssetSummaryGrid investorCode={selectedInvestor?.investor_code}
-                                  onAssetSummarySelect={handleAssetSummarySelect}/>
-            </div>
-            <div>
-                <InvestorCommitments investorCode={selectedInvestor?.investor_code} assetClassCode={selectedAssetCode}/>
-            </div>
+            )}
+            
+            { selectedInvestor && (
+                <div>
+                    <AssetSummaryGrid investorCode={selectedInvestor?.investor_code}
+                                      onAssetSummarySelect={handleAssetSummarySelect}/>
+                </div>
+            )}
+
+            {selectedAssetSummary && (
+                <div>
+                    <InvestorCommitments investorCode={selectedInvestor?.investor_code}
+                                         assetClassCode={selectedAssetSummary?.asset_class_code}/>
+                </div>
+            )}
         </main>
     );
 }

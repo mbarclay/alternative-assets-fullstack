@@ -14,7 +14,7 @@ const InvestorCommitmentsTable = ({ investorCode, assetClassCode }: InvestorComm
   const [commitments, setCommitments] = useState<InvestorCommitment[]>([]);
 
   useEffect(() => {
-    const url = `http://localhost:8080/investor/${investorCode}/commitments/asset-class/${assetClassCode}`;
+    const url = `http://localhost:8000/investor/${investorCode}/commitments/asset-class/${assetClassCode}`;
 
     fetch(url)
       .then((response) => response.json())
