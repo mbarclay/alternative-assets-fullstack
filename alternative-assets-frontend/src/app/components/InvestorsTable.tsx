@@ -11,7 +11,7 @@ interface InvestorsTableProps {
 
 const InvestorsTable = ({ onInvestorSelect }: InvestorsTableProps) => {
   const [investors, setInvestors] = useState<Investor[]>([]);
-  const [selectedInvestor, setSelectedInvestor] = useState<Investor | null>(null);
+  const [selectedInvestor, setSelectedInvestor] = useState<Investor | undefined>(undefined);
 
   useEffect(() => {
     fetch('http://localhost:8000/investors')

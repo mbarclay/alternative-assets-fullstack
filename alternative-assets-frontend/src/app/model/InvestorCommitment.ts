@@ -1,4 +1,4 @@
-export class InvestorCommitment {
+export interface InvestorCommitment {
     commitment_uuid: string;
     asset_class_code: string;
     asset_class: string;

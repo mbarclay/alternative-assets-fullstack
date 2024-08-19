@@ -13,7 +13,7 @@ interface AssetSummariesProps {
 const AssetSummaryGrid = ({ onAssetSummarySelect, investorCode }: AssetSummariesProps) => {
 
     const [assetSummaries, setAssetSummaries] = useState<AssetSummary[]>([]);
-    const [selectedAssetClassCode, setSelectedAssetClassCode] = useState<string | null>(null);
+    const [selectedAssetClassCode, setSelectedAssetClassCode] = useState<string | undefined>(undefined);
 
     useEffect(() => {
         fetch(`http://localhost:8000/assets-summary/${investorCode}`)
