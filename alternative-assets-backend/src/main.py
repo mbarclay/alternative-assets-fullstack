@@ -2,11 +2,21 @@ from typing import List
 
 import uvicorn
 from fastapi import FastAPI, Request
+from starlette.middleware.cors import CORSMiddleware
 
 from src.api.responses.investors import AssetsByInvestorSummaryResponse, InvestorCommitmentsResponse, InvestorResponse
 from src.services.investor_service import get_assets_by_investor_summary, get_investor_commitments, get_investors
 
 app = FastAPI()
+
+# allow all origins
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.get("/")

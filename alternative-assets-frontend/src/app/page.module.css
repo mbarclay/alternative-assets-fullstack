@@ -108,6 +108,56 @@
 .logo {
   position: relative;
 }
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-family: var(--font-mono);
+}
+
+.tableContainer {
+  width: 100%;
+  max-width: var(--max-width);
+  padding: 0 1rem;
+}
+
+.customTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: rgba(var(--tile-start-rgb), 0.9);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.customTable th, .customTable td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid rgba(var(--tile-end-rgb), 0.7);
+}
+
+.customTable th {
+  background-color: rgba(var(--tile-start-rgb), 1);
+  font-weight: 600;
+  font-family: var(--font-mono), serif;
+}
+
+.customTable td {
+  font-size: 0.9rem;
+}
+
+.customTable tbody tr:hover {
+  background-color: rgba(var(--card-rgb), 0.1);
+}
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
