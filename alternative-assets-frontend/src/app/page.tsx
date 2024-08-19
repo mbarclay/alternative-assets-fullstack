@@ -29,7 +29,7 @@ export default function Home() {
       </div>
       <div className={styles.div}>
         <h2 className={styles.h2}>
-          Commitments: {selectedInvestor?.name ? selectedInvestor.name : ''}
+          Commitments: {selectedInvestor?.name ? selectedInvestor.name : '(choose investor)'}: {selectedAssetCode}
         </h2>
       </div>
         <div>

@@ -260,7 +260,6 @@
 .card {
   padding: 1rem;
   border-radius: var(--border-radius);
-  /*background: #f0f0f0; !* Match the selectedRow background color *!*/
   border: 1px solid rgba(200, 200, 200, 0.5); /* Light border */
   text-align: center; /* Center text in the card */
   cursor: pointer;
@@ -273,9 +272,14 @@
 }
 
 /* Selected state styling */
-.card.selected {
+.cardSelected {
   background-color: #f0f0f0; /* Same as .selectedRow background color */
   border: 1px solid rgba(179, 179, 179, 0.5); /* Slightly darker border for emphasis */
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  text-align: center; /* Center text in the card */
+  cursor: pointer;
+  transition: background 200ms, border 200ms;
 }
 
 .card h3 {
