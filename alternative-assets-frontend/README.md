@@ -2,6 +2,8 @@
 
 This is the frontend for the Alternative Assets project, built with Next.js and TypeScript. The project relies on a backend API, which should be configured and running locally. You can find the backend repository [here](https://github.com/mbarclay/alternative-assets-fullstack/tree/main/alternative-assets-backend).
 
+![alternative-assets-frontend.png](alternative-assets-frontend.png)
+
 ## Prerequisites
 
 Before you begin, ensure you have the following installed:
