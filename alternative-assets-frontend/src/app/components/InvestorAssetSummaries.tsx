@@ -17,7 +17,8 @@ const AssetSummaryGrid = ({
   const [assetSummaries, setAssetSummaries] = useState<AssetSummary[]>([]);
 
   useEffect(() => {
-    fetch(`http://localhost:8000/assets-summary/${investorCode}`)
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    fetch(`${apiUrl}/assets-summary/${investorCode}`)
       .then((response) => response.json())
       .then((data) => setAssetSummaries(data as AssetSummary[]))
       .catch((error) =>
