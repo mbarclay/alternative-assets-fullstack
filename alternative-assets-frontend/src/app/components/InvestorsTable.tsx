@@ -17,7 +17,7 @@ const InvestorsTable = ({ onInvestorSelect }: InvestorsTableProps) => {
 
   useEffect(() => {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-    const url = `${apiUrl}/investors`
+    const url = `${apiUrl}/investors`;
 
     fetch(url)
       .then((response) => response.json())

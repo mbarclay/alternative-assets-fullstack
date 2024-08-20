@@ -1,12 +1,9 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "allowSyntheticDefaultImports": true,
     "target": "es6",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -18,9 +15,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "types": [
-      "jest"
-    ],
+    "types": ["jest", "cypress"],
     "plugins": [
       {
         "name": "next"
@@ -37,9 +32,10 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "node_modules/ts-jest/globals.d.ts"
+    "node_modules/ts-jest/globals.d.ts",
+    "node_modules/cypress/types/cypress-global-vars.d.ts",
+    "src",
+    "cypress"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }
