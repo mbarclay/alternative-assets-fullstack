@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Alternative Assets Frontend
+
+This is the frontend for the Alternative Assets project, built with Next.js and TypeScript. The project relies on a backend API, which should be configured and running locally. You can find the backend repository [here](https://github.com/mbarclay/alternative-assets-fullstack/tree/main/alternative-assets-backend).
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (v16.x or later recommended)
+- [npm](https://www.npmjs.com/) (v8.x or later recommended)
+- The Python FastAPI [backend](https://github.com/mbarclay/alternative-assets-fullstack/tree/main/alternative-assets-backend), is available, configured and running locally.
 
 ## Getting Started
 
-First, run the development server:
+### Clone the repository:
+
+```bash
+git clone git@github.com:mbarclay/alternative-assets-fullstack.git
+cd alternative-assets-fullstack/alternative-assets-frontend
+```
+
+### Install dependencies:
+
+```bash
+npm install
+```
+
+### Environment variables:
+
+A default local environment variables `.env` configuration has been supplied with the project and (although non-standard) deliberately commited to the project.
+
+### Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The application should now be running at http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- `npm run dev`: Starts the Next.js development server at http://localhost:3000.
+- `npm run build`: Builds the application for production. The output is located in the .next directory.
+- `npm run lint`: Lints the project files using ESLint. The --fix option is included to automatically fix any linting errors.
+- `npm run format`: Formats the codebase using Prettier.
+- `npm run test`: Runs the test suite using Jest.
 
-## Learn More
+## Cypress
 
-To learn more about Next.js, take a look at the following resources:
+A very small and humble Cypress example has been included to demonstrate the testing of a component. It is by no means extensive.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+In the shell:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+npx cypress run
+```
 
-## Deploy on Vercel
+Or, alternatively launch the Cypress GUI application:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+npx cypress open
+```
