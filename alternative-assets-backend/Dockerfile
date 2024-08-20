@@ -16,7 +16,7 @@ RUN poetry config virtualenvs.create false \
     && poetry install --no-interaction --no-ansi
 
 # make port 8080 available to the world outside this container
-EXPOSE 8080
+EXPOSE 8000
 
 # run the fastapi app using uvicorn when the container launches.
-CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8080", "--reload"]
+CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
