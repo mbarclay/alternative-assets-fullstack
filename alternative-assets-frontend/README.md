@@ -51,6 +51,8 @@ The application should now be running at http://localhost:3000.
 
 A very small and humble Cypress example has been included to demonstrate the testing of a component. It is by no means extensive.
 
+- **Ensure that the [backend API](https://github.com/mbarclay/alternative-assets-fullstack/blob/main/alternative-assets-backend/README.md) is and the frontend are running `npm run dev`, then...**
+
 In the shell:
 
 ```bash

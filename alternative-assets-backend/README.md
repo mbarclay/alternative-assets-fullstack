@@ -27,7 +27,8 @@ poetry install
 You can start the application using Uvicorn directly:
 
 ```bash
-uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload
+poetry shell
+uvicorn src.main:app --host localhost --port 8000 --reload
 ```
 
 The service will be available at http://localhost:8000
