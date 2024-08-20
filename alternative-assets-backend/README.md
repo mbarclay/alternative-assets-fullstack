@@ -8,7 +8,7 @@ This is a FastAPI-based backend service for managing alternative assets data. Th
 
 - Python 3.12 or higher
 - Poetry for dependency management 
-- Docker (optional, for containerized deployment)
+- Docker (optional, for containerised deployment)
 
 ## Clone the repository
 
