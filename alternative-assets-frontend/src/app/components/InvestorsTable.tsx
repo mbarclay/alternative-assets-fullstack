@@ -16,7 +16,10 @@ const InvestorsTable = ({ onInvestorSelect }: InvestorsTableProps) => {
   >(undefined);
 
   useEffect(() => {
-    fetch('http://localhost:8000/investors')
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    const url = `${apiUrl}/investors`
+
+    fetch(url)
       .then((response) => response.json())
       .then((data) => setInvestors(data as Investor[]))
       .catch((error) => console.error('Error fetching investors:', error));

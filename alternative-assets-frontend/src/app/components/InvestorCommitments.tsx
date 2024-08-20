@@ -17,7 +17,8 @@ const InvestorCommitmentsTable = ({
   const [commitments, setCommitments] = useState<InvestorCommitment[]>([]);
 
   useEffect(() => {
-    const url = `http://localhost:8000/investor/${investorCode}/commitments/asset-class/${assetClassCode}`;
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    const url = `${apiUrl}/investor/${investorCode}/commitments/asset-class/${assetClassCode}`;
 
     fetch(url)
       .then((response) => response.json())
