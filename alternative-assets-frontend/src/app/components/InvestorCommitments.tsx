@@ -3,14 +3,17 @@
 import styles from '@/app/page.module.css';
 import { useState, useEffect } from 'react';
 import { InvestorCommitment } from '@/app/model/InvestorCommitment';
-import { formatCurrency } from "@/app/utilities/Formatters";
+import { formatCurrency } from '@/app/utilities/Formatters';
 
 interface InvestorCommitmentsTableProps {
   investorCode: string | undefined;
   assetClassCode: string | undefined;
 }
 
-const InvestorCommitmentsTable = ({ investorCode, assetClassCode }: InvestorCommitmentsTableProps) => {
+const InvestorCommitmentsTable = ({
+  investorCode,
+  assetClassCode,
+}: InvestorCommitmentsTableProps) => {
   const [commitments, setCommitments] = useState<InvestorCommitment[]>([]);
 
   useEffect(() => {
@@ -18,7 +21,7 @@ const InvestorCommitmentsTable = ({ investorCode, assetClassCode }: InvestorComm
 
     fetch(url)
       .then((response) => response.json())
-      .then((data) => setCommitments(data))
+      .then((data) => setCommitments(data as InvestorCommitment[]))
       .catch((error) => console.error('Error fetching commitments:', error));
   }, [investorCode, assetClassCode]);
 

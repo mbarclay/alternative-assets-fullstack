@@ -3,7 +3,7 @@
 import styles from '@/app/page.module.css';
 import { useState, useEffect } from 'react';
 import { Investor } from '@/app/model/Investor';
-import {formatCurrency, formatDate} from "@/app/utilities/Formatters";
+import { formatCurrency, formatDate } from '@/app/utilities/Formatters';
 
 interface InvestorsTableProps {
   onInvestorSelect: (investor: Investor) => void;
@@ -11,12 +11,14 @@ interface InvestorsTableProps {
 
 const InvestorsTable = ({ onInvestorSelect }: InvestorsTableProps) => {
   const [investors, setInvestors] = useState<Investor[]>([]);
-  const [selectedInvestor, setSelectedInvestor] = useState<Investor | undefined>(undefined);
+  const [selectedInvestor, setSelectedInvestor] = useState<
+    Investor | undefined
+  >(undefined);
 
   useEffect(() => {
     fetch('http://localhost:8000/investors')
       .then((response) => response.json())
-      .then((data) => setInvestors(data))
+      .then((data) => setInvestors(data as Investor[]))
       .catch((error) => console.error('Error fetching investors:', error));
   }, []);
 
@@ -41,7 +43,11 @@ const InvestorsTable = ({ onInvestorSelect }: InvestorsTableProps) => {
         {investors.map((investor) => (
           <tr
             key={investor.investor_code}
-            className={selectedInvestor?.investor_code === investor.investor_code ? styles.selectedRow : ''}
+            className={
+              selectedInvestor?.investor_code === investor.investor_code
+                ? styles.selectedRow
+                : ''
+            }
             onClick={() => handleRowClick(investor)}
           >
             <td>{investor.investor_code}</td>
