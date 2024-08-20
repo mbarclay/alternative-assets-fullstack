@@ -1,5 +1,3 @@
-from datetime import datetime
-
 import pytest
 
 from src.utilities.epoch import date_string_to_epoch

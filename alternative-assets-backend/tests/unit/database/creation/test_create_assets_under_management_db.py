@@ -1,8 +1,6 @@
 import os
 import sqlite3
 
-import pytest
-
 from config import settings
 from src.database.creation.create_assets_under_management_db import create_database, lookup_investor_code_by
 
@@ -30,7 +28,7 @@ def test_create_database():
     # get a cursor and perform a basic query
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
-    cursor.execute(f"SELECT * FROM investors")
+    cursor.execute("SELECT * FROM investors")
     results = cursor.fetchall()
 
     assert results is not None
