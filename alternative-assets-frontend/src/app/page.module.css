@@ -90,7 +90,7 @@
 
 .center::before,
 .center::after {
-  content: "";
+  content: '';
   left: 50%;
   position: absolute;
   filter: blur(45px);
@@ -104,7 +104,12 @@
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
-    background: rgba(240, 240, 240, 0.9); /* Changed to light hover background */
+    background: rgba(
+      240,
+      240,
+      240,
+      0.9
+    ); /* Changed to light hover background */
     border: 1px solid rgba(200, 200, 200, 0.6); /* Changed to light hover border */
   }
 
@@ -253,7 +258,10 @@
 
 .gridContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(200px, 1fr)
+  ); /* Responsive grid */
   gap: 1rem;
   padding: 1rem;
 }
@@ -264,11 +272,18 @@
   border: 1px solid rgba(200, 200, 200, 0.5); /* Light border */
   text-align: center; /* Center text in the card */
   cursor: pointer;
-  transition: background 200ms, border 200ms;
+  transition:
+    background 200ms,
+    border 200ms;
 }
 
 .card:hover {
-  background: rgba(240, 240, 240, 0.9); /* Light hover background similar to the table row hover */
+  background: rgba(
+    240,
+    240,
+    240,
+    0.9
+  ); /* Light hover background similar to the table row hover */
   border: 1px solid rgba(200, 200, 200, 0.6); /* Light hover border */
 }
 
@@ -280,7 +295,9 @@
   border-radius: var(--border-radius);
   text-align: center; /* Center text in the card */
   cursor: pointer;
-  transition: background 200ms, border 200ms;
+  transition:
+    background 200ms,
+    border 200ms;
 }
 
 .card h3 {
