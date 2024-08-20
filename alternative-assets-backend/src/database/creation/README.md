@@ -2,6 +2,8 @@
 
 This project includes a Python script that creates a SQLite database based on an SQL file containing the necessary schema and data. The script will recreate the database if it already exists.
 
+![assets-under-management-schema.png](assets-under-management-schema.png)
+
 ## Files
 
 - `create_assets_under_management_db.py`: The Python script that creates the SQLite database.
