@@ -46,6 +46,7 @@ const InvestorsTable = ({ onInvestorSelect }: InvestorsTableProps) => {
         {investors.map((investor) => (
           <tr
             key={investor.investor_code}
+            id={`investor-row-${investor.investor_code}`}
             className={
               selectedInvestor?.investor_code === investor.investor_code
                 ? styles.selectedRow

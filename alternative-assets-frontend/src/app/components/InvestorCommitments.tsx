@@ -39,7 +39,9 @@ const InvestorCommitmentsTable = ({
       </thead>
       <tbody>
         {commitments.map((commitment) => (
-          <tr key={commitment.commitment_uuid}>
+          <tr key={commitment.commitment_uuid}
+              id={`commitment-${commitment.commitment_uuid}`}
+          >
             <td>{commitment.commitment_uuid}</td>
             <td>{commitment.asset_class_code}</td>
             <td>{commitment.asset_class}</td>

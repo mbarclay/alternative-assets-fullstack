@@ -31,6 +31,7 @@ const AssetSummaryGrid = ({
       {assetSummaries.map((assetSummary) => (
         <div
           key={assetSummary.asset_class_code}
+          id={`asset-summary-${assetSummary.asset_class_code}`}
           className={styles.card}
           onClick={() => onAssetSummarySelect(assetSummary)}
         >
