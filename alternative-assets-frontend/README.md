@@ -8,8 +8,8 @@ This is the frontend for the Alternative Assets project, built with Next.js and 
 
 Before you begin, ensure you have the following installed:
 
-- [Node.js](https://nodejs.org/) (v16.x or later recommended)
-- [npm](https://www.npmjs.com/) (v8.x or later recommended)
+- [Node.js](https://nodejs.org/) (v18.17, or latest is recommended)
+- [npm](https://www.npmjs.com/) (v8.x, or latest recommended)
 - The Python FastAPI [backend](https://github.com/mbarclay/alternative-assets-fullstack/tree/main/alternative-assets-backend), is available, configured and running locally.
 
 ## Getting Started
